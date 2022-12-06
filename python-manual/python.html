@@ -192,31 +192,189 @@ print(value1)
 print(value2)
 # 3
 </code></pre>
+      <h4>연습 문제</h4>
+
+      <details>
+        <summary>Q1. 음속</summary>
+        <p>
+          천둥이 치고 나서 3.8초 후에 소리가 들렸어요.
+          천둥은 자신의 위치에서 몇 미터 앞으로 떨어졌습니까?
+        </p>
+        <p>
+          음속 = 330<span class="small">[m/s]</span>
+        </p>
+        <pre><code class="language-python">time = 3.8
+speed = 330
+</code></pre>
+        <details class="answer">
+          <summary>정답</summary>
+          <p>1254.0</p>
+          <pre><code class="language-python">time = 3.8
+speed = 330
+
+distance = time * speed
+print(distance)
+</code></pre>
+        </details>
+      </details>
+
+      <details>
+        <summary>Q2. BMI</summary>
+        <p>
+          우니코형는 키 173cm 몸무게 48kg입니다.<br>
+          우니코형의 BMI를 구해주세요.
+        </p>
+        <p>
+          BMI = 체중<span class="small">[kg]</span> ÷ ( 신장<span class="small">[m]</span> )²
+        </p>
+        <pre><code class="language-python">width = 173
+weight = 48
+</code></pre>
+        <details class="hint">
+          <summary>HINT 1</summary>
+          <p>
+            173cm는 센티미터이기 때문에 그대로 계산에 사용할 수 없습니다.<br>
+            m로 변환해 보겠습니다.
+          </p>
+          <details class="answer">
+            <summary>HINT 1 의 쓰는 법</summary>
+            <pre><code class="language-python">meter = height / 100
+</code></pre>
+          </details>
+        </details>
+        <details class="answer">
+          <summary>정답</summary>
+          <p>16.037...</p>
+          <pre><code class="language-python">height = 173
+weight = 48
+
+meter = 173 / 100
+
+bmi = weight / (meter ** 2)
+print(bmi)
+</code></pre>
+        </details>
+      </details>
 
       <h3>리스트</h3>
       <p>
         변수의 형태 중 하나입니다.<br>
+        수치나 문자 데이터를 나열한 것입니다.
       </p>
+      <h4>리스트를 만들다</h4>
       <p>
-        수치나 문자 데이터를 나열한 것입니다.<br>
         <code>[]</code>기호 안에 쉼표<code>,</code>로 구분하여 데이터를 기술합니다.
+        <code>[]</code>안에 아무것도 넣지 않으면 빈 리스트이 생깁니다.
       </p>
-      <pre><code class="language-python">numbers = [23, 591, 2, -30, 94, 78, 2]
-member = ['Canola', 'Unico', 'Yuuki', 'Bit-kun']
+      <pre><code class="language-python">numbers = []
+# 빈 리스트
+
+numbers = [23, -591, 2.3, -32.9]
 </code></pre>
+      <h4>리스트의 내용물</h4>
       <p>
         <code>x</code>번째 데이터를 얻기 위해서는 <code>list[x]</code>와 같이 기술합니다.<br>
         프로그램 안에서는 순서는 <code>0</code>부터 시작합니다.<br>
-        순서를 정하는 수치는 "인덱스"라고 불립니다.
+        순서를 정하는 수치는 <code>index</code>라고 불립니다.
       </p>
-      <pre><code class="language-python">print(numbers[1])
+      <pre><code class="language-python">numbers = [23, -591, 2.3, -32.9]
+# index     0    1    2     3
+
+member = ['Canola', 'Unico', 'Yuuki', 'Bit-kun']
+# index      0         1        2         3
+
+print(numbers[1])
 # 591
 
 print(member[0])
 # Canola
 </code></pre>
-    </main>
+      <p>
+        <code>index</code>수치가 목록 길이보다 크면 오류가 납니다.
+      </p>
+      <pre><code class="language-python">numbers = []
 
+print(numbers[1])
+# IndexError: list index out of range
+</code></pre>
+      <h4>연습 문제</h4>
+      <details>
+        <summary>Q3. 달의 영어 이름</summary>
+        <p>
+          한 달의 달 이름을 넣은 목록이 있습니다.
+          8월의 영어 이름을 출력해 주세요.
+          index가 달의 숫자가 되도록 만들었습니다.
+        </p>
+        <pre><code class="language-python">month = [
+    '',         # index = 0
+    'January',  # index = 1
+    'February', # index = 2
+    'March',    # index = 3
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+    ]
+</code></pre>
+        <details class="answer">
+          <summary>정답</summary>
+          <pre><code class="language-python">print(month[8])
+</code></pre>
+        </details>
+      </details>
+      <details>
+        <summary>Q4. 합계 금액</summary>
+        <p>
+          당신은 쇼핑하러 왔습니다.<br>
+          산 상품의 가격을 리스트로 했습니다.<br>
+          총 금액을 구하세요.<br>
+        </p>
+        <pre><code class="language-python">prices = [2000, 11000, 5000, 8000]
+</code></pre>
+        <details class="answer">
+          <summary>정답</summary>
+          <p>26000</p>
+          <pre><code class="language-python">prices = [2000, 11000, 5000, 8000]
+
+total = prices[0] + prices[1] + prices[2] + prices[3]
+print(total)
+</code></pre>
+        </details>
+      </details>
+      <details>
+        <summary>Q5. 시험의 평균점</summary>
+        <p>
+          시험 점수를 정리한 목록을 만들었어요.<br>
+          테스트의 평균 점수를 구하세요.<br>
+        </p>
+        <pre><code class="language-python">scores = [92, 84, 65, 88, 39]</code></pre>
+        <details class="hint">
+          <summary>HINT 1</summary>
+          <p>평균점 = 합계점 ÷ 인수</p>
+        </details>
+        <details class="answer">
+          <summary>정답</summary>
+          <p>73.6</p>
+          <pre><code class="language-python">scores = [92, 84, 65, 88, 39]
+
+total = scores[0] + scores[1] + scores[2] + scores[3] + scores[4]
+average = total / 5
+
+print(average)
+</code></pre>
+          <pre><code class="language-python">scores = [92, 84, 65, 88, 39]
+
+average = (scores[0] + scores[1] + scores[2] + scores[3] + scores[4]) / 5
+
+print(average)</code></pre>
+        </details>
+      </details>
+    </main>
     <aside>
       <h3>프로그램의 기본</h3>
       <ol>
@@ -231,6 +389,11 @@ print(member[0])
         <li><a href="#calc">수치 계산</a></li>
         <li><a href="#calc-vars">변수 간의 계산</a></li>
         <li><a href="#calc-align">계산 순서</a></li>
+      </ol>
+      <h3>리스트</h3>
+      <ol>
+        <li><a href="">리스트를 만들다</a></li>
+        <li><a href="">리스트의 내용물</a></li>
       </ol>
     </aside>
 
