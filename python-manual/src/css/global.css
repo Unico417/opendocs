@@ -119,6 +119,24 @@ tbody tr:last-child {
     border-bottom: none;
 }
 
+/* = = = = = DETAIL = = = = = */
+details {
+    margin: .25em 0;
+    padding: .5em 1em;
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+details.hint {
+    background-color: rgba(255, 255, 0, .1);
+    border: 1px solid rgba(255, 255, 0, .3);
+}
+
+details.answer {
+    background-color: rgba(0, 255, 0, .1);
+    border: 1px solid rgba(70, 255, 70, .5);
+}
+
 /* = = = = = COMMONS = = = = = */
 .center {
     text-align: center;
@@ -126,4 +144,8 @@ tbody tr:last-child {
 
 .left {
     text-align: left;
+}
+
+.small {
+    font-size: 0.8em;
 }
