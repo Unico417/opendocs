@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow" />
+  <title>Python</title>
+  <link rel="stylesheet" href="../src/css/global.css">
+  <link rel="stylesheet" href="../src/css/highlight.css">
+</head>
+
+<body>
+  <header>
+
+  </header>
+  <div id="column">
+    <main>
+      <h3>タスク</h3>
+      <p>
+        <b>TECHers Operator</b>は、タスクを覚えてくれます。<br>
+        タスクを管理するためには、<code>/task</code>コマンドを使います。
+      </p>
+
+      <h4 id="task-see">タスクの確認</h4>
+      <p>
+        <code>/task</code> のみを入力することで、自分のタスクを確認することができます。
+      </p>
+      <pre><code class="language-plaintext">/task
+/task list
+</code></pre>
+
+      <h4 id="task-add">タスクの追加</h4>
+      <p>
+        タスクの追加には、<code>/task</code>コマンドの後に、タスク名を記入します。<br>
+        半角スペースは、削除されます。<br>
+      </p>
+      <p>
+        コマンドの後に<code>add</code>や<code>insert</code>を入れても、覚えてくれます。
+      </p>
+      <pre><code class="language-plaintext">/task 夕飯を考える
+/task add 帰ったら掃除する
+/task insert 昨日のバグを修正する
+</code></pre>
+
+      <h4 id="task-tag">タグを設定する</h4>
+      <p>
+        タスクにタグをつけるためには、タスク名のあとに<code>#タグ名</code>と書きます。
+      </p>
+      <p>
+        現在はタグに効果はありませんが、将来的には該当タグのみを確認する事も可能にする予定です。
+      </p>
+      <pre><code class="language-plaintext">/task 魚にエサをあげる#ペット</code></pre>
+
+      <h4 id="task-set-due">期日を設定する</h4>
+      <p>
+        タスクに期日を設定することができます。<br>
+        期日を設定するには、タスク名の後に、スペースで区切って日付を入力します。
+      </p>
+      <p>
+        年がない場合には、最短の将来の日付に設定されます。<br>
+        例) 8/1に5/1の期日を設定 → 来年の5/1に期日を設定
+      <pre><code class="language-plaintext">/task リリース当日 2025-12-30
+/task ドメイン更新日#ホームページ 9/1
+</code></pre>
+      </p>
+
+      <h4 id="task-done">タスクを完了する</h4>
+      <p>
+        タスクを完了するためには、コマンドのあとに<code>done</code>、<code>complete</code>、<code>finish</code>を追加します。<br>
+        複数ありますが、特に変わりはありません。<br>
+        思いついたものを使ってください。
+      </p>
+      <p>
+        期日、タグ名は不要です。
+      </p>
+      <pre><code class="language-plaintext">/task done リストを更新する
+/task complete 誕生日プレゼントを買う
+/task finish レビューを書く
+</code></pre>
+
+      <h4 id="task-del">タスクを削除する</h4>
+      <p>
+        コマンドのあとに、<code>delete</code>を追加します。<br>
+        タスクが消えることは、<a href="#task-done">タスクの完了</a>と変わりありません。
+      </p>
+      <pre><code class="language-plaintext">/task delete 洗濯物を回す</code></pre>
+
+      <h4 id="task-del-all">タスクを全削除する</h4>
+      <p>
+        タスクを全て削除します。
+      </p>
+      <pre><code class="language-plaintext">/task delete all</code></pre>
+
+      <h4 id="task-reminder">期日に通知をする</h4>
+      <p>
+        期日が付いたタスクの当日に、通知をしてくれます。<br>
+        通知は、朝8時にDMでメッセージが届きます。<br>
+        知らない人からDMが来るのを拒否している場合は、届きません。
+      </p>
+      <p>
+        有効化には、<code>/reminder</code>コマンドを使います。
+      </p>
+      <pre><code class="language-plaintext">/reminder on</code></pre>
+    </main>
+
+    <aside>
+      <h3>タスク</h3>
+      <ol>
+        <li><a href="#task-see">タスクの確認</a></li>
+        <li>
+          <a href="#task-add">タスクの追加</a>
+          <ol>
+            <li><a href="#task-tag">タグを設定</a></li>
+            <li><a href="#task-set-due">期日を設定</a></li>
+          </ol>
+        </li>
+        <li><a href="#task-done">タスクの完了</a></li>
+        <li><a href="#task-del">タスクの削除</a></li>
+        <li><a href="#task-del-all">タスクの全削除</a></li>
+        <li><a href="#task-reminder">期日に通知をする</a></li>
+      </ol>
+    </aside>
+
+  </div>
+  <footer>
+  </footer>
+  <script src="../src/js/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</body>
+
+</html>
